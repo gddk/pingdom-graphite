@@ -1,0 +1,9 @@
+graphite:
+    host: 127.0.0.1
+    port: 2003
+    
+pingdom:
+    user: your@email.com
+    pass: yourpasswword
+    key: yourkey
+    checkid: yourpingdomcheckid
