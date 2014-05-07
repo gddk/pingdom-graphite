@@ -6,4 +6,3 @@ pingdom:
     user: your@email.com
     pass: yourpasswword
     key: yourkey
-    checkid: yourpingdomcheckid

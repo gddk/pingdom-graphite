@@ -16,12 +16,12 @@ module Pingdom
 	# checkid   INT
 	# from      INT unix timestamp
 	# to        INT unix timestamp
-	def self.results(from, to)
+	def self.results(checkid, from, to)
 		config = YAML.load_file("#{File.dirname(__FILE__)}/../config/config.yml")
 		pingdom = config['pingdom']
 		auth = {:username => pingdom['user'], :password => pingdom['pass'] }
-		#response = HTTParty.get("https://api.pingdom.com/api/2.0/results/#{pingdom['checkid'].to_i}?from=#{from.to_i}&to=#{to.to_i}", :basic_auth => auth, :headers => {"App-Key" => pingdom['key']}, :debug_output => $stdout)
-		response = HTTParty.get("https://api.pingdom.com/api/2.0/results/#{pingdom['checkid'].to_i}?from=#{from.to_i}&to=#{to.to_i}", :basic_auth => auth, :headers => {"App-Key" => pingdom['key']})
+		#response = HTTParty.get("https://api.pingdom.com/api/2.0/results/#{checkid.to_i}?from=#{from.to_i}&to=#{to.to_i}&status=down,up", :basic_auth => auth, :headers => {"App-Key" => pingdom['key']}, :debug_output => $stdout)
+		response = HTTParty.get("https://api.pingdom.com/api/2.0/results/#{checkid.to_i}?from=#{from.to_i}&to=#{to.to_i}&status=down,up", :basic_auth => auth, :headers => {"App-Key" => pingdom['key']})
 		return JSON.parse(response.body).to_h
 	end
 
