@@ -32,6 +32,7 @@ git clone https://github.com/gddk/pingdom-graphite.git
 cd pingdom-graphite
 rvm use 2.1.1
 sudo -s
+rvm use 2.1.1
 bundle install
 exit
 ```
