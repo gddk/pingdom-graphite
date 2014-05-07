@@ -33,6 +33,9 @@ cd pingdom-graphite
 rvm use 2.1.1
 sudo -s
 rvm use 2.1.1
+# Will complain at you about running this as root, but
+# it's the only way I could get it to work. vagrant user
+# doesn't have permission to add gems
 bundle install
 exit
 ```
