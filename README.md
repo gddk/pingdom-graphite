@@ -23,6 +23,12 @@ rvm use 2.1.1 --default
 exit
 ```
 
+## Alternate
+Use the vagrant box described here:
+[https://github.com/gddk/vagrant-cent65-64-puppet](https://github.com/gddk/vagrant-cent65-64-puppet)
+
+It has rvm and ruby 2.1.1 preinstalled and ready to go.  
+
 ##  Download the source and prepare
 ```
 cd
