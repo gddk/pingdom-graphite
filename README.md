@@ -44,9 +44,13 @@ exit
 Self explanatory
 
 ##  Execute app
+Change XXXXXXX to your checkid
 ```
-REM Coming soon
+./pingdom-graphite.rb XXXXXXX
 ```
+In it's current form, it will fetch the last 2 days worth of data.
+For the first run, you may want to edit pingdom-graphite.rb and make
+it more, like 30 or 60 days, to backfill your data.
 
 ## Setup to run regularly
 ```
