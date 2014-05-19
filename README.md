@@ -49,6 +49,30 @@ exit
 ##  Configure config/config.yml
 Self explanatory
 
+## Test the app is working right
+Edit spec/pingdom_spec.rb and change 1118385 to your pingdom check id
+Then run "rspec --format nested" and the output should look like this:
+```
+Graphite
+  #new
+    returns a new graphite object
+    has a host
+    has a port
+    has an open socket
+  #report
+    reports to graphite without socket error
+
+Pingdom
+  #probes
+    is a hash
+    contains more than 50 probes
+  #results
+    return more than 30 results for checkid 1118385 for last hour
+
+Finished in 11.01 seconds
+8 examples, 0 failures
+```
+
 ##  Execute app
 Change XXXXXXX to your checkid
 ```
@@ -60,5 +84,5 @@ it more, like 30 or 60 days, to backfill your data.
 
 ## Setup to run regularly
 ```
-REM Coming soon
+REM Coming soon, add to crontab
 ```
