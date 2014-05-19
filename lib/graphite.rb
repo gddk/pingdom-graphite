@@ -1,6 +1,8 @@
 require 'socket'
  
 class Graphite
+  attr_accessor :host, :port
+  
   def initialize()
 	config = YAML.load_file("#{File.dirname(__FILE__)}/../config/config.yml")
 	graphite = config['graphite']
